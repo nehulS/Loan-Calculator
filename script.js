@@ -6,8 +6,8 @@ const onClick = (e) => {
   const interest = document.querySelector(".In").value;
   const years = document.querySelector(".Ye").value;
   console.log(amount);
-  let total = (amount * interest * years) / 100;
-  result.innerHTML = total;
+  let total = amount * Math.pow(1 + interest / 100, years);
+  result.innerHTML = "Total amount is " + total.toFixed(2);
 };
 
 button.addEventListener("click", onClick);
